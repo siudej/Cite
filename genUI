@@ -1,0 +1,3 @@
+pyuic5 citeGUI.ui -o citeGUI5.py
+pyuic4 citeGUI.ui -o citeGUI4.py
+perl -pi -w -e 's/self\.resultsTabs\.setTabBarAutoHide\(False\)//g;' citeGUI4.py 

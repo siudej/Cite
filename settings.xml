@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<CiteXML>
+    <Config>
+        <ConfigSetting id="citex" type="int">165</ConfigSetting>
+        <ConfigSetting id="citewidth" type="int">750</ConfigSetting>
+        <ConfigSetting id="bibtexOut" type="bool">False</ConfigSetting>
+        <ConfigSetting id="batchArxiv" type="str">Include</ConfigSetting>
+        <ConfigSetting id="citey" type="int">338</ConfigSetting>
+        <ConfigSetting id="searchMRZbl" type="str">Zbl# if no MR#</ConfigSetting>
+        <ConfigSetting id="volumeStyle" type="str">textbf</ConfigSetting>
+        <ConfigSetting id="batchCount" type="int">3</ConfigSetting>
+        <ConfigSetting id="arxivFirst" type="bool">False</ConfigSetting>
+        <ConfigSetting id="titleStyle" type="str">textit</ConfigSetting>
+        <ConfigSetting id="journalStyle" type="str">None</ConfigSetting>
+        <ConfigSetting id="citeheight" type="int">500</ConfigSetting>
+        <ConfigSetting id="batchDOIURL" type="str">URL if different than DOI#</ConfigSetting>
+        <ConfigSetting id="searchArxiv" type="str">Include</ConfigSetting>
+        <ConfigSetting id="bibitemStyle" type="str">{initials}</ConfigSetting>
+        <ConfigSetting id="searchCount" type="int">100</ConfigSetting>
+        <ConfigSetting id="batchFindZbl" type="bool">False</ConfigSetting>
+        <ConfigSetting id="numberStyle" type="str">textit</ConfigSetting>
+        <ConfigSetting id="bst" type="str">amsplain</ConfigSetting>
+        <ConfigSetting id="authorStyle" type="str">textbf</ConfigSetting>
+        <ConfigSetting id="batchFindMR" type="bool">True</ConfigSetting>
+        <ConfigSetting id="sortBy" type="str">newest first</ConfigSetting>
+        <ConfigSetting id="batchMRZbl" type="str">Zbl# if no MR#</ConfigSetting>
+        <ConfigSetting id="defaultAMS" type="str">Automatic</ConfigSetting>
+        <ConfigSetting id="searchDOIURL" type="str">URL if different than DOI#</ConfigSetting>
+        <ConfigSetting id="searchMrefWithZbl" type="bool">True</ConfigSetting>
+        <ConfigSetting id="keepBibitems" type="bool">True</ConfigSetting>
+        <ConfigSetting id="genBibitems" type="bool">True</ConfigSetting>
+        <ConfigSetting id="defaultArxiv" type="str">UCDavis front</ConfigSetting>
+        <ConfigSetting id="separator" type="str">bibitem/bibtex</ConfigSetting>
+        <ConfigSetting id="searchIncludeDOIURL" type="str">Only if no MR#/Zbl#</ConfigSetting>
+        <ConfigSetting id="batchIncludeDOIURL" type="str">Only if no MR#/Zbl#</ConfigSetting>
+    </Config>
+</CiteXML>
+
