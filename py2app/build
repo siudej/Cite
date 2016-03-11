@@ -47,5 +47,7 @@ import tarfile
 
 os.chdir('osx')
 with tarfile.open("Cite.app.tar.gz", "w:gz") as tar:
+    for f in os.listdir('.'):
+        tar.add(f)
     os.chdir(dist)
     tar.add("Cite.app")
