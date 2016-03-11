@@ -5,14 +5,15 @@ PyQt GUI and a separate fetching engine for finding mathematics related citation
 
 Assuming required packages are present:
 * Application can be started with `cite.py`.
-* On OS X run `installMac.sh` to install Services (user confirmation needed) and add `cite` to PATH.
+* On OS X with Anaconda: run `installMac.sh` to install Services (user confirmation needed) and add `cite` to PATH.
+* On OS X with Cite.app: Double click on Services to install, then put Cite.app in /Applications folder.
 
 ### General requirements
 * LaTeX/BibTeX
 * `PyQt` (4 or 5)
 * `bibtexparser` Python package
 
-On OS X I would recommend installing Anaconda Python, then `bibtexparser` via `pip`. Another option would be to use a standalone App (see the end of this document for more about OS X).
+On OS X I would recommend installing Anaconda Python, then `bibtexparser` via `pip`. Another option is to use a standalone App (see the end of this document for more about OS X).
 
 ### Search format
 Search supports many field specifiers (author, title, journal, year, ...) as well as logical connectors (and/or/not). The search format is uniform for all databases, with all differences handled behind the scene.
@@ -52,10 +53,10 @@ Settings are saved in settings.xml file in the script's folder. This file is pro
 In PyQt, the settings are handled by a slightly modified [pyqtconfig](https://github.com/mfitzp/pyqtconfig) scipt (supplied).
 
 ### OS X
-A standalone OS X app should work on OS X 10.10 and 10.11, although constantly changing system environment makes it hard to maintain a working package. *To be posted soon.* The only requirement to run the app is a working LaTaX installation.
+A standalone OS X app should work on OS X 10.10 and 10.11, although constantly changing system environment makes it hard to maintain a working package. The App is in `osx/` subfolder, together with two Automator scripts. The only requirement to run the App is a working LaTaX installation. And it needs to be placed in `/Applications`.
 
-The supplied Automator scripts allow filtering (via Service) of any selected text through the application.
-The output can either replace the selection, or appear in a new TextEdit window. The scripts need to be installed (automatically done by 'installMac.sh'). Then right click on a selected text and look for Cite in Services.
+The supplied Automator scripts allow filtering of any selected text through the application.
+The output can either replace the selection, or appear in a new TextEdit window. Then right click on a selected text and look for Cite in Services.
 
 ## Warning
 This is an alpha version.

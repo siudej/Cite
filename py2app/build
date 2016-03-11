@@ -1,0 +1,51 @@
+#!/usr/bin/python
+""" Run py2app and fix remaining problems. """
+import os
+
+dist = '/Users/siudeja/compile/cite/dist'
+contents = dist + '/Cite.app/Contents'
+os.chdir("../")
+os.system('python py2app/setup.py py2app -b/Users/siudeja/compile/cite/build \
+          -d{}'.format(dist))
+
+# symlink to python instead of python executable
+print '\n ... Fixing python ...\n'
+os.system('rm '+contents+'/MacOS/python')
+os.system('ln -s /usr/bin/python '+contents+'/MacOS/python')
+
+# __init__.py missing from PyQt5 package
+print '\n ... Fixing lib-dynload/PyQt5 ...\n'
+dynlibpyqt = contents+'/Resources/lib/python2.7/lib-dynload/PyQt5'
+os.system('echo "#" > {0}/__init__.py'.format(dynlibpyqt))
+
+# debug Qt frameworks not needed
+print '\n ... Removing unnecessary debug framework files ...\n'
+os.system('find {}/Frameworks/ -name "*_debug*" -delete'.format(contents))
+os.system('find {}/Frameworks/ -name "*.prl" -delete'.format(contents))
+
+# El Capitan does not allow relative paths in libraries
+print '\n ... Fixing relative paths (for El Capitan) ... \n'
+path = '/Applications/Cite.app/Contents'
+frame = contents + '/Frameworks/{0}.framework/Versions/5/{0}'
+libs = [dynlibpyqt + '/QtCore.so', dynlibpyqt + '/QtWidgets.so',
+        dynlibpyqt + '/QtGui.so',
+        contents + '/Resources/qt_plugins/platforms/libqcocoa.dylib'] + \
+    [frame.format(e) for e in ('QtWidgets', 'QtGui', 'QtPrintSupport')]
+
+# run install_name_tool on Qt libraries
+for lib in libs:
+    deps = os.popen('''otool -L ''' + lib)
+    for dep in deps:
+        dep = dep.split()[0].strip()
+        if dep.startswith('@exe'):
+            os.system('install_name_tool -change %s %s %s'
+                      % (dep, dep.replace('@executable_path/..', path), lib))
+
+# compress the app
+print '\n ... Compressing application folder ... \n'
+import tarfile
+
+os.chdir('osx')
+with tarfile.open("Cite.app.tar.gz", "w:gz") as tar:
+    os.chdir(dist)
+    tar.add("Cite.app")

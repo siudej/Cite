@@ -1,11 +1,11 @@
 <?xml version="1.0" ?>
 <CiteXML>
     <Config>
-        <ConfigSetting id="citex" type="int">165</ConfigSetting>
+        <ConfigSetting id="citex" type="int">156</ConfigSetting>
         <ConfigSetting id="citewidth" type="int">750</ConfigSetting>
         <ConfigSetting id="bibtexOut" type="bool">False</ConfigSetting>
         <ConfigSetting id="batchArxiv" type="str">Include</ConfigSetting>
-        <ConfigSetting id="citey" type="int">338</ConfigSetting>
+        <ConfigSetting id="citey" type="int">330</ConfigSetting>
         <ConfigSetting id="searchMRZbl" type="str">Zbl# if no MR#</ConfigSetting>
         <ConfigSetting id="volumeStyle" type="str">textbf</ConfigSetting>
         <ConfigSetting id="batchCount" type="int">3</ConfigSetting>
