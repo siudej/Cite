@@ -3,7 +3,7 @@
 PyQt GUI and a separate fetching engine for finding mathematics related citations on 
 [arXiv](http://front.math.ucdavis.edu), [MathSciNet](http://www.ams.org/mathscinet/) and [zbMATH](https://zbmath.org).
 
-![screenshot](doc/cite.png)
+<img src="doc/cite.png" width="480">
 
 Assuming required packages are present, application can be started with `cite.py`.
 
