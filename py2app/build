@@ -46,9 +46,13 @@ print '\n ... Compressing application folder ... \n'
 import tarfile
 
 os.chdir('osx')
-with tarfile.open("Cite.app.tar.gz", "w:gz") as tar:
+
+with tarfile.open("Cite.workflows.tar.gz", "w:gz") as tar:
     for f in os.listdir('.'):
         tar.add(f)
+    tar.close()
+
+with tarfile.open("Cite.app.tar.gz", "w:gz") as tar:
     os.chdir(dist)
     tar.add("Cite.app")
     tar.close()
