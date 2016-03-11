@@ -51,3 +51,4 @@ with tarfile.open("Cite.app.tar.gz", "w:gz") as tar:
         tar.add(f)
     os.chdir(dist)
     tar.add("Cite.app")
+    tar.close()
