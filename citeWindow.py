@@ -22,11 +22,11 @@ sip.setapi("QString", 2)
 sip.setapi("QVariant", 2)
 try:
     from PyQt5.QtWidgets import QMainWindow, QApplication, QTextBrowser
-    from PyQt5.QtCore import QSize, QPoint, pyqtSlot, QEvent, Qt
+    from PyQt5.QtCore import QSize, QPoint, pyqtSlot, QEvent, Qt, QUrl
     from citeGUI5 import Ui_Cite
 except:
     from PyQt4.QtGui import QMainWindow, QApplication, QTextBrowser
-    from PyQt4.QtCore import QSize, QPoint, pyqtSlot, QEvent, Qt
+    from PyQt4.QtCore import QSize, QPoint, pyqtSlot, QEvent, Qt, QUrl
     from citeGUI4 import Ui_Cite
 
 # fix for missing qt_plugin in OS X App
@@ -69,6 +69,8 @@ class Cite(Ui_Cite, QMainWindow):
         self.text = self.bibtext = self.lastquery = ""
         self.batchBibtext = self.batchText = ""
         self.neverOpened = True
+
+        self.helpText.setSource(QUrl('doc/help.html'))
 
     def linkSettings(self):
         """ Link widgets to settings to enable automatic saving. """

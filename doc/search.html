@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title></title>
+    <style type="text/css">
+        code {color: blue;}
+	pre {color: blue;}
+	.large {font-size: large;}
+    </style>
+  </head>
+  <body>
+      <h2><a href="help.html">Main</a></h2>
+      <hr>
+      <h1> Search features </h1>
+      There is a choice of ArXiv, MathSciNet and Zentralblatt for searching. The latter two 
+      can also use MRef to validate a reference. An all inclusive search is also possible.
+      <ul>
+	  <li> Search supports <code>au:</code>, <code>ti:</code>, <code>py:(yr:,dt:)</code> <code>so:(jo:)</code> and <code>any:</code> modifiers<br>
+              (for author, title, publish year, journal and any fields). Other modifiers specific to
+              ArXiv, MathSciNet or zbMATH should work also. </li>
+	  <li> Publish year field supports ranges (ex. <code>py:2001-2007</code>) and before/after (ex. <code>py:&lt;2000</code>)</li>
+	  <li> Certain inputs at the beginning of a new line trigger autoguessing. E.g. a year or range will be interpreted as publication year, <code>last, f*</code> will be treated as author, <code>book OR b, journal OR j, proceedings OR p OR a</code> as type of publication 
+	  <li> Words do not need to match in the order they are typed and as phrases. <strong>This is not the standard behavior of MathSciNet.</strong> The behavior is similar to most web search engines.
+          <li> Logical operators <code>and</code>, <code>or</code> can be inserted between words or fields
+	  <li> New lines are automatically interpreted as new fields
+	  <li> Lines are connected by AND, unless a different connector is given at the end of the line
+      </ul>
+      <h1> Search examples </h1>
+      <ul>
+          <li><code>isoperimetric inequalities Polya</code>: search for all the words anywhere in the reference</li>
+          <li><code>isoperimetric inequalities au:Polya</code>: now Polya must be an author</li>
+          <li><code>ti:isoperimetric inequalities any:Polya</code>: Polya can appear anywhere, but the rest must be in the title</li>
+          <li><code>Polya py:1950-1960</code>: publication year between 1950 and 1960, Polya anywhere. py: could be ommited if years in new line </li>
+          <li><code>Polya, G*</code>: MathSciNet assumes this is author search
+          <li><code>Polya, G* ti:isoperimetric</code>: still author search, but with isoperimetric in title</li>
+      </ul>
+      <h1> Reference numbers </h1>
+      <ul>
+          <li>There is a slight chance that Zbl and MR numbers would not match the same reference, assuming MRef was used with zbMATH. </li>
+          <li>However, DOI always matches MR, if MR is available, even if not shown. Otherwise it matches Zbl number.</li>
+          <li>The following Latex commands can be used to generate hyperlinked numbers.
+              <br>
+              <pre>
+ \newcommand{\mref}[1]{%
+ \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#1}}
+
+ \newcommand{\arxiv}[1]{%
+ \href{http://front.math.ucdavis.edu/#1}{ArXiv:#1}}
+
+ \newcommand{\doi}[1]{%
+ \href{http://dx.doi.org/#1}{doi:#1}}
+
+ \newcommand{\zbl}[1]{%
+ \href{http://zbmath.org/?q=an#1}{Zbl #1}}
+	      </pre>
+          <li> For non-hyperlinked numbers use
+                           <br>
+              <pre>
+ \newcommand{\mref}{}
+ \newcommand{\arxiv}[1]{ArXiv:#1}
+ \newcommand{\doi}[1]{doi:#1}
+ \newcommand{\zbl}[1]{Zbl #1}
+              </pre>
+      </ul>
+  </body>
+</html>
