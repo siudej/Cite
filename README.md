@@ -8,8 +8,8 @@ PyQt GUI and a separate fetching engine for finding mathematics related citation
 Assuming required packages are present, application can be started with `cite.py`.
 
 ### OS X:
+* Use Cite.dmg from the latest release. Double click on Services to install them, and put Cite.app in `/Applications` folder.
 * With Anaconda: Assuming all requrements are already installed, clone this repository, then run `installMac.sh` to install Services (user confirmation needed) and add `cite` to PATH.
-* With Cite.app: Double click on Services to install them, then put Cite.app in `/Applications` folder.
 In either case `cite` should work from terminal. 
 
 ##### TexShop
