@@ -8,11 +8,14 @@ PyQt GUI and a separate fetching engine for finding mathematics related citation
 Assuming required packages are present, application can be started with `cite.py`.
 
 ### OS X:
-* Use Cite.dmg from the latest release. Double click on Services to install them, and put Cite.app in `/Applications` folder.
+* Use Cite.dmg from the [initial release](https://github.com/siudej/Cite/releases/tag/v0.1-alpha).
+   - Put Cite.app in `/Applications` folder
+   - Optional: Double click on workflows to install them
+   - Optional: Add TexShop macro
 * With Anaconda: Assuming all requrements are already installed, clone this repository, then run `installMac.sh` to install Services (user confirmation needed) and add `cite` to PATH.
 In either case `cite` should work from terminal. 
 
-##### TexShop
+##### TexShop macro
 The supplied macro cuts the current line (or the selected lines) and runs it through the citation software.
 
 Installation: 
