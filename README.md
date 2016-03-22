@@ -21,6 +21,10 @@ The supplied macro cuts the current line (or the selected lines) and runs it thr
 Installation: 
    Go to `Macros->Open Macro Editor`. Click on `New Item` and paste the contents of the `TexShop.applescript` file into the content field. Add some name and a convenient keyboard shortcut. The main Application must be started at least once before running the macro.
 
+##### OS X Services
+The supplied Automator scripts (workflows) allow filtering of any selected text in any application through the software.
+The output can either replace the selection, or appear in a new TextEdit window. Then right click on a selected text and look for Cite in Services.
+
 ### General requirements
 * LaTeX/BibTeX
 * `PyQt` (4 or 5)
@@ -62,13 +66,6 @@ The `,ba` command can be used to force arXiv search. Other options are also avai
 Settings are saved in settings.xml file in the script's folder. This file is processed by both terminal and GUI versions. Hence it is convenient to set the settings in GUI, although the XML file can also be modified.
 
 In PyQt, the settings are handled by a slightly modified [pyqtconfig](https://github.com/mfitzp/pyqtconfig) scipt (supplied).
-
-### OS X
-A standalone OS X app should work on OS X 10.10 and 10.11, although constantly changing system environment makes it hard to maintain a working package. The App is in `osx/` subfolder bundled with two Automator scripts in `Cite.app.tar.gz`. The only requirement to run the App is a working LaTaX installation. And it needs to be placed in `/Applications`.
-Click on the archive, then on `Raw` button to download it. 
-
-The supplied Automator scripts allow filtering of any selected text through the application.
-The output can either replace the selection, or appear in a new TextEdit window. Then right click on a selected text and look for Cite in Services.
 
 ## Warning
 This is an alpha version.
