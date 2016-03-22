@@ -41,13 +41,13 @@ OPTIONS = {'argv_emulation': False,
                          'cite.py', 'citeWindow.py', 'citeTerminal.py',
                          'batch.py', 'progress2.py', 'bibtex.py', 'config.py',
                          'default.bst', 'fetch.py', 'settings.xml',
-                         'py2app/cite'],
+                         'py2app/cite', 'doc'],
            }
 
 setup(
     app=APP,
     name="Cite",
-    version="0.1a",
+    version="0.1",
     author="Bartek Siudeja",
     options={'py2app': OPTIONS},
     setup_requires=['py2app'],

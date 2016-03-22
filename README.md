@@ -7,17 +7,21 @@ PyQt GUI and a separate fetching engine for finding mathematics related citation
 
 Assuming required packages are present, application can be started with `cite.py`.
 
-On OS X:
-* with Anaconda: run `installMac.sh` to install Services (user confirmation needed) and add `cite` to PATH.
-* with Cite.app: Double click on Services to install, then put Cite.app in `/Applications` folder.
+### OS X:
+* With Anaconda: Assuming all requrements are already installed, clone this repository, then run `installMac.sh` to install Services (user confirmation needed) and add `cite` to PATH.
+* With Cite.app: Double click on Services to install them, then put Cite.app in `/Applications` folder.
 In either case `cite` should work from terminal. 
+
+##### TexShop
+The supplied macro cuts the current line (or the selected lines) and runs it through the citation software.
+
+Installation: 
+   Go to `Macros->Open Macro Editor`. Click on `New Item` and paste the contents of the `TexShop.applescript` file into the content field. Add some name and a convenient keyboard shortcut. The main Application must be started at least once before running the macro.
 
 ### General requirements
 * LaTeX/BibTeX
 * `PyQt` (4 or 5)
 * `bibtexparser` Python package
-
-On OS X I would recommend installing Anaconda Python, then `bibtexparser` via `pip`. Another option is to use the standalone App (see the end of this document for more info about OS X).
 
 ### Search format
 Search supports many field specifiers (author, title, journal, year, ...) as well as logical connectors (and/or/not). The search format is uniform for all databases, with all differences handled behind the scene.

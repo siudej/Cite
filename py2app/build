@@ -41,18 +41,5 @@ for lib in libs:
             os.system('install_name_tool -change %s %s %s'
                       % (dep, dep.replace('@executable_path/..', path), lib))
 
-# compress the app
-print '\n ... Compressing application folder ... \n'
-import tarfile
-
-os.chdir('osx')
-
-with tarfile.open("Cite.workflows.tar.gz", "w:gz") as tar:
-    for f in os.listdir('.'):
-        tar.add(f)
-    tar.close()
-
-with tarfile.open("Cite.app.tar.gz", "w:gz") as tar:
-    os.chdir(dist)
-    tar.add("Cite.app")
-    tar.close()
+print '\n ... Building application bundle ... \n'
+os.system('dmgbuild -s py2app/dmg.py "Cite" {}/Cite.dmg'.format(dist))
